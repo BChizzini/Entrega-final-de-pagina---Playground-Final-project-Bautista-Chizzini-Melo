@@ -1,0 +1,9 @@
+body { background-color: #ffffff; color: #000000; }  
+.navbar { background-color: #000000 !important; }  
+.btn { background-color: #dc3545; border-color: #dc3545; }  
+.btn:hover { background-color: #c82333; }
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+.card { border: 1px solid #000000; transition: transform 0.3s; }
+.card:hover { transform: scale(1.05); }
+.like-btn { color: #dc3545; }
+

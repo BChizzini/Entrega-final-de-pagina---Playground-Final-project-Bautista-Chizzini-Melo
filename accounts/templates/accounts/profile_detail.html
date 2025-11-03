@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Perfil de {{ profile_user.username }}</h1>
+<img src="{{ profile.avatar.url }}" alt="Avatar" class="rounded" style="width:150px; height:150px; object-fit:cover;">
+<p><strong>Bio:</strong> {{ profile.bio }}</p>
+<p><strong>Etiqueta:</strong> {{ profile.get_user_type_display }}</p>
+
+<h3>Comentarios</h3>
+{% for c in comentarios %}
+<div><strong>{{ c.car.marca }} {{ c.car.modelo }}:</strong> {{ c.content }}</div>
+{% empty %}
+<p>No hay comentarios.</p>
+{% endfor %}
+
+<h3>Likes</h3>
+{% for l in likes %}
+<div>{{ l.car.marca }} {{ l.car.modelo }}</div>
+{% empty %}
+<p>No hay likes.</p>
+{% endfor %}
+
+{% if coleccion %}
+<h3>Mi Colección</h3>
+<div class="gallery">
+{% for car in coleccion %}
+    <img src="{{ car.imagen.url }}" alt="{{ car.modelo }}" style="width:100px; margin:5px;">
+{% endfor %}
+</div>
+{% endif %}
+{% endblock %}

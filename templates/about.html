@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<style>
+  
+  .about-container {
+    max-width: 850px;
+    margin: 60px auto;
+    text-align: center;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1a1a1a;
+    line-height: 1.8;
+    animation: fadeInUp 1.2s ease forwards;
+    opacity: 0;
+  }
+
+  
+  .about-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #0d0d0d;
+    margin-bottom: 25px;
+  }
+
+  
+  .about-text {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 50px;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
+ 
+  .video-container {
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .video-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  }
+
+  .video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<div class="about-container">
+  <h1 class="about-title">Acerca de Mí</h1>
+  <p class="about-text">
+    Soy <strong>Bautista Chizzini Melo</strong>, tengo 20 años y una gran pasión por los autos.
+    Desde chico me atraen los motores, el diseño y esa sensación única de libertad que transmite manejar.
+    Me encanta aprender sobre diferentes modelos, comparar sus características y soñar con tener mi auto ideal.
+    Para mí, los autos no son solo un medio de transporte, sino una forma de expresar personalidad y disfrutar del camino.
+    <br><br>
+    Este es mi <strong>portafolio</strong>, donde comparto parte de mi mundo automotor.
+  </p>
+
+  <div class="video-container">
+    <video width="100%" autoplay loop muted playsinline>
+      <source src="{% static 'videos/autos.mp4' %}" type="video/mp4">
+      Tu navegador no soporta videos HTML5.
+    </video>
+  </div>
+</div>
+{% endblock %}
+
+

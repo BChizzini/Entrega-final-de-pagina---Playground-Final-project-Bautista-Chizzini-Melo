@@ -1,0 +1,26 @@
+// {% extends 'base.html' %}
+{% block content %}
+<style>
+  .login-container {
+    animation: fadeInUp 1.5s ease forwards;
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      transform: translateY(30px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<div class="login-container">
+  <h1>Iniciar Sesión</h1>
+  <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Login</button>
+  </form>
+</div>
+{% endblock %}

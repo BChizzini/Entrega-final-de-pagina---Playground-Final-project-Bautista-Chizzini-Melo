@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+ 
+  .welcome-container {
+    max-width: 850px;
+    margin: 80px auto 40px auto;
+    text-align: center;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #111;
+    animation: fadeInUp 1.2s ease forwards;
+    opacity: 0;
+    line-height: 1.7;
+  }
+
+  
+  .welcome-title {
+    font-size: 2.8rem;        
+    font-weight: 700;
+    color: #0d0d0d;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+  }
+
+  
+  .welcome-subtitle {
+    font-size: 1.2rem;       
+    font-weight: 400;
+    color: #555;
+    margin-bottom: 12px;
+  }
+
+ 
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  
+  .divider {
+    width: 80px;
+    height: 4px;
+    background-color: #007bff;
+    margin: 0 auto 40px auto;
+    border-radius: 2px;
+  }
+</style>
+
+<div class="welcome-container">
+  <h1 class="welcome-title">Bienvenido a mi Portafolio de Autos de Colección</h1>
+  <div class="divider"></div>
+  <p class="welcome-subtitle">
+    Este portafolio es un espacio donde podés compartir tus autos favoritos, descubrir nuevas joyas automotrices y conectar con otros apasionados por los motores.
+  </p>
+  <p class="welcome-subtitle">
+    Explorá autos increíbles, dejá tus likes y comentarios, y disfrutá de la comunidad del automovilismo.
+  </p>
+</div>
+{% endblock %}
+
+
+

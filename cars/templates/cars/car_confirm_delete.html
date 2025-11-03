@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>¿Borrar este auto?</h1>
+  <p>{{ car.marca }} {{ car.modelo }}</p>
+
+  {% if messages %}
+      {% for message in messages %}
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              {{ message }}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+      {% endfor %}
+  {% endif %}
+
+  <form method="post">
+      {% csrf_token %}
+      <button type="submit">Sí, borrar</button>
+      <a href="{% url 'car_list' %}">Cancelar</a>
+  </form>
+{% endblock %}

@@ -1,0 +1,31 @@
+// {% extends 'base.html' %}
+{% block content %}
+<style>
+  .messages-container {
+    animation: fadeInUp 1.5s ease forwards;
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      transform: translateY(30px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<div class="messages-container">
+  <h1>Mensajes</h1>
+
+  {% if messages %}
+    <ul>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No tienes mensajes.</p>
+  {% endif %}
+</div>
+{% endblock %}
